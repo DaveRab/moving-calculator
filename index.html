@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Moving Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <form>
@@ -18,13 +19,26 @@
       <input type="text" id="qty" name="qty">
       <button type="submit" name="button">Add Item</button>
     </form>
-    <section>
-      <table>
-        <tbody>
-          <th>
-            
-          </th>
-        </tbody>
+    <section id="table-display">
+      <table id="table-items">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Width</th>
+            <th>Height</th>
+            <th>Depth</th>
+            <th>Quantity</th>
+            <th>Cubic Feet</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>Box</td>
+          <td>12</td>
+          <td>15</td>
+          <td>15</td>
+          <td>1</td>
+          <td>1.5625</td>
+        </tr>
       </table>
     </section>
   </body>
