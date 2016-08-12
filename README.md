@@ -27,3 +27,7 @@ Moving Calculator app will allow users to calculate how much cubic feet their st
 3. Update the table on page
 4. Functions for CRUD operations
 5. Calculate total cubic feet in table and keep table up to date (map new array using cu ft prop?)
+
+### 8/12/16
+TODO:
+Add LocalStorage to app
