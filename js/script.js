@@ -9,24 +9,22 @@ function submitEntry() {
 
 //clears #tableInfo innerHTML and redraws table with updated list.
 function updateTable(){
-  var t = document.getElementById('tableInfo');
-  t.innerHTML = '';
+  var tbody = document.getElementById('tableInfo');
+  tbody.innerHTML = '';
+
   for (var i = 0; i <= tableItems.length; i++) {
-    t.innerHTML += "<tr> <td>" + tableItems[i].name +
+    if (tableItems[i]){ //check for object in tableItems[i] loaded
+    tbody.innerHTML += "<tr> <td>" + tableItems[i].name +
     "</td> <td>" + tableItems[i].width +
     "</td> <td>" + tableItems[i].height +
     "</td> <td>" + tableItems[i].depth +
     "</td> <td>" + tableItems[i].qty +
-    "</td> <td>" + tableItems[i].cuft + "</td> <td> <span id=\"" + [i] + "\" class=\"remove\">X</span></td></tr>  ";
+    "</td> <td>" + tableItems[i].cuft + "</td> <td> <button id=\"" + [i] + "\" class=\"remove\">X</button></td></tr>  ";
+    }
   }
-  //working on remove feature
-  var buttons = document.getElementsByClassName('remove');
-   for (var i=0; i < buttons.length; i++) {
-       buttons[i].addEventListener('click', remove);
-   };
 
+  createButtons();
 }
-
 
 
 //gets form input values and returns an object with form input values
@@ -45,7 +43,7 @@ function getItemData(){
       cuft: Math.round(((width/12) * (height/12) * (depth/12)) * qty)
     }
 
-    //TODO Implement DRY'er version of above code
+    //TODO Implement DRY'er version of above code...idea below
     /*var itemAttr = ['name','width','height','depth','qty'];
     var obj = {};
     for (var i = 0; i <= itemAttr.length; i++) {
@@ -55,11 +53,19 @@ function getItemData(){
 }
 
 
-//TODO Write delete function
-//Needs to be able to grab item associated with current row and remove it from array
-//then redraw the new table.
 
 
+//Loops through the delete buttons and assigns event listeners
+function createButtons(){
+  var buttons = document.getElementsByClassName('remove');
+   for (var i=0; i < buttons.length; i++) {
+       buttons[i].addEventListener('click', remove);
+   };
+
+}
+
+//uses id generated in updateTable to delete the row associated with
+//delete button then redraw the new table.
 function remove() {
     var id = this.getAttribute('id');
     console.log(id);
