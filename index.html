@@ -4,23 +4,24 @@
     <meta charset="utf-8">
     <title>Moving Calculator</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
   </head>
   <body>
     <form>
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" value="enter item name">
+      <input type="text" id="name" name="name" value="Box">
       <label for="width">W:</label>
-      <input type="text" id="width" name="width">
+      <input type="text" id="width" name="width" value=15>
       <label for="height">H:</label>
-      <input type="text" id="height" name="height">
+      <input type="text" id="height" name="height" value=15>
       <label for="depth">D:</label>
-      <input type="text" id="depth" name="depth">
+      <input type="text" id="depth" name="depth" value=15>
       <label for="qty">Qty:</label>
-      <input type="text" id="qty" name="qty">
-      <button type="submit" name="button">Add Item</button>
+      <input type="text" id="qty" name="qty" value=2>
+      <button type="button" name="addItem" onclick="submitEntry()">Add Item</button>
     </form>
     <section id="table-display">
-      <table id="table-items">
+      <table id="main-table">
         <thead>
           <tr>
             <th>Name</th>
@@ -31,14 +32,8 @@
             <th>Cubic Feet</th>
           </tr>
         </thead>
-        <tr>
-          <td>Box</td>
-          <td>12</td>
-          <td>15</td>
-          <td>15</td>
-          <td>1</td>
-          <td>1.5625</td>
-        </tr>
+        <tbody id="tableInfo">
+        </tbody>
       </table>
     </section>
   </body>
