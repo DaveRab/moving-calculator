@@ -17,11 +17,17 @@ function updateTable(){
     "</td> <td>" + tableItems[i].height +
     "</td> <td>" + tableItems[i].depth +
     "</td> <td>" + tableItems[i].qty +
-    "</td> <td>" + tableItems[i].cuft + "</td> </tr>";
-
+    "</td> <td>" + tableItems[i].cuft + "</td> <td> <span id=\"" + [i] + "\" class=\"remove\">X</span></td></tr>  ";
   }
+  //working on remove feature
+  var buttons = document.getElementsByClassName('remove');
+   for (var i=0; i < buttons.length; i++) {
+       buttons[i].addEventListener('click', remove);
+   };
 
 }
+
+
 
 //gets form input values and returns an object with form input values
 function getItemData(){
@@ -37,7 +43,7 @@ function getItemData(){
       depth: depth,
       qty: qty,
       cuft: Math.round(((width/12) * (height/12) * (depth/12)) * qty)
-    };
+    }
 
     //TODO Implement DRY'er version of above code
     /*var itemAttr = ['name','width','height','depth','qty'];
@@ -46,4 +52,17 @@ function getItemData(){
       obj[i] = document.getElementById(itemAttr[i]).value;
     }
     return obj;*/
+}
+
+
+//TODO Write delete function
+//Needs to be able to grab item associated with current row and remove it from array
+//then redraw the new table.
+
+
+function remove() {
+    var id = this.getAttribute('id');
+    console.log(id);
+    tableItems.splice(id, 1);
+    updateTable();
 }
