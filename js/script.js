@@ -1,6 +1,6 @@
 //Dynamic Table Script
 var tableItems = [];
-
+d
 function submitEntry() {
   var item = getItemData();
   tableItems.push(item);

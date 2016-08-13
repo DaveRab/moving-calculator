@@ -2,27 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moving Calculator</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
   </head>
   <body>
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" value="Box">
-      <label for="width">W:</label>
-      <input type="text" id="width" name="width" value=15>
-      <label for="height">H:</label>
-      <input type="text" id="height" name="height" value=15>
-      <label for="depth">D:</label>
-      <input type="text" id="depth" name="depth" value=15>
-      <label for="qty">Qty:</label>
-      <input type="text" id="qty" name="qty" value=1>
-      <button type="button" name="addItem" onclick="submitEntry()">Add Item</button>
-    </form>
-    <section id="table-display">
+    <header>
+      <h1>Moving Calculator</h1>
+      <p>Finding Cubic Feet So You Don't Have To</p>
+    </header>
+    <main>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="Box">
+        <label for="width">W:</label>
+        <input type="text" id="width" name="width" value=15>
+        <label for="height">H:</label>
+        <input type="text" id="height" name="height" value=15>
+        <label for="depth">D:</label>
+        <input type="text" id="depth" name="depth" value=15>
+        <label for="qty">Qty:</label>
+        <input type="text" id="qty" name="qty" value=1>
+        <button type="button" name="addItem" onclick="submitEntry()">Add Item</button>
+      </form>
       <table id="main-table">
-        <thead>
+        <thead id="table-header">
           <tr>
             <th>Name</th>
             <th>Width</th>
@@ -32,9 +37,9 @@
             <th>Cubic Feet</th>
           </tr>
         </thead>
-        <tbody id="tableInfo">
+        <tbody id="tableInfo"><!--populated with script-->
         </tbody>
       </table>
-    </section>
+  </main>
   </body>
 </html>

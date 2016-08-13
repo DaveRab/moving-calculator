@@ -5,6 +5,7 @@ table, th, td {
 #main-table {
   border-collapse: collapse;
   margin-top: 15px;
+
 }
 
 td, th {
@@ -13,6 +14,7 @@ td, th {
 
 .remove {
   cursor: pointer;
+  font-weight: 700;
 }
 
 .remove:hover {
