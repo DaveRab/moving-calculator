@@ -41,7 +41,7 @@ label[for="width"] {
 /*---TABLE---*/
 table {
   margin: 0 auto;
-  width: 75%;
+  max-width: 45%;
 }
 table th {
   background: #55BBEE;
@@ -62,11 +62,14 @@ table tbody tr:last-child {
 
 td, th {
   padding: 5px;
+  text-align: center;
 }
 
 .remove {
   cursor: pointer;
   font-weight: 700;
+  margin: 0 auto;
+  display: block;
 }
 
 .remove:hover {
