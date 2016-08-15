@@ -1,15 +1,63 @@
+/*---GENERAL---*/
 * {
   box-sizing: border-box;
 }
 
-table, th, td {
-  border: 1px solid #000;
+
+/*---HEADER---*/
+header {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  background: #075f8b;
+  color: #FFF;
+  padding: 1em;
+  border-bottom: 6px solid #0e2f40;
+}
+
+header h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+header p {
+  font-style:italic;
+  font-size: .8em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/*---FORM---*/
+form {
+  padding: 10px;
+  width: 90%;
+  margin: 10px auto 0;
+}
+
+label[for="width"] {
+  display: inline-block;
+}
+
+/*---TABLE---*/
+table {
+  margin: 0 auto;
+  width: 75%;
+}
+table th {
+  background: #55BBEE;
+}
+
+table tbody tr:nth-child(even) {
+  background: #AAA;
+}
+
+table tbody tr:last-child {
+  background: #EEE;
 }
 
 #main-table {
   border-collapse: collapse;
   margin-top: 15px;
-
 }
 
 td, th {

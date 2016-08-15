@@ -14,19 +14,22 @@ function updateTable(){
 
   for (var i = 0; i <= tableItems.length; i++) {
     if (tableItems[i]){ //check for object in tableItems[i] loaded
-    tbody.innerHTML += "<tr> <td>" + tableItems[i].name +
-    "</td> <td>" + tableItems[i].width +
-    "</td> <td>" + tableItems[i].height +
-    "</td> <td>" + tableItems[i].depth +
-    "</td> <td>" + tableItems[i].qty +
-    "</td> <td>" + tableItems[i].cuft + "</td> <td> <button id=\"" + [i] + "\" class=\"remove\">X</button></td></tr>  ";
+    tbody.innerHTML += "<tr> <td>"
+    + tableItems[i].name + "</td> <td>"
+    + tableItems[i].width + "\"</td> <td>"
+    + tableItems[i].height + "\"</td> <td>"
+    + tableItems[i].depth + "\"</td> <td>"
+    + tableItems[i].qty + "</td> <td>"
+    + tableItems[i].cuft + "</td> <td> <button id=\"" + [i] + "\" class=\"remove\">X</button></td></tr>  ";
     }
   }
+  //Add total cubic feet of all objects
   var sum = 0;
   tableItems.forEach(function(items){
     sum += items.cuft;
   });
   tbody.innerHTML += "<tr><td colspan=\'5\' class=\'total\'> Total Cubic Feet:</td><td>" + sum + "</td></tr>";
+  //create delete buttons for each row with function createButtons()
   createButtons();
 }
 
@@ -72,7 +75,6 @@ function createButtons(){
 //delete button then redraw the new table.
 function remove() {
     var id = this.getAttribute('id');
-    console.log(id);
     tableItems.splice(id, 1);
     updateTable();
 }
