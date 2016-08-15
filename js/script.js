@@ -1,6 +1,6 @@
 //Dynamic Table Script
 var tableItems = [];
-d
+
 function submitEntry() {
   var item = getItemData();
   tableItems.push(item);
@@ -22,7 +22,11 @@ function updateTable(){
     "</td> <td>" + tableItems[i].cuft + "</td> <td> <button id=\"" + [i] + "\" class=\"remove\">X</button></td></tr>  ";
     }
   }
-
+  var sum = 0;
+  tableItems.forEach(function(items){
+    sum += items.cuft;
+  });
+  tbody.innerHTML += "<tr><td colspan=\'5\' class=\'total\'> Total Cubic Feet:</td><td>" + sum + "</td></tr>";
   createButtons();
 }
 
@@ -58,7 +62,7 @@ function getItemData(){
 //Loops through the delete buttons and assigns event listeners
 function createButtons(){
   var buttons = document.getElementsByClassName('remove');
-   for (var i=0; i < buttons.length; i++) {
+   for(var i=0; i < buttons.length; i++) {
        buttons[i].addEventListener('click', remove);
    };
 
