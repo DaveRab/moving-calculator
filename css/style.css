@@ -40,8 +40,9 @@ label[for="width"] {
 
 /*---TABLE---*/
 table {
-  margin: 0 auto;
+  margin: 50px auto;
   max-width: 45%;
+  border-collapse: collapse;
 }
 
 tfoot {
@@ -54,11 +55,6 @@ table th {
 
 table tbody tr:nth-child(even) {
   background: #EBEBEB;
-}
-
-#main-table {
-  border-collapse: collapse;
-  margin-top: 15px;
 }
 
 td, th {
