@@ -23,14 +23,10 @@ function updateTable(){
     + tableItems[i].cuft + "</td> <td> <button id=\"" + [i] + "\" class=\"remove\">X</button></td></tr>  ";
     }
   }
-  //Add total cubic feet of all objects
-  var sum = 0;
-  tableItems.forEach(function(items){
-    sum += items.cuft;
-  });
-  tbody.innerHTML += "<tr><td colspan=\'5\' class=\'total\'> Total Cubic Feet:</td><td>" + sum + "</td></tr>";
+
   //create delete buttons for each row with function createButtons()
   createButtons();
+  totalSum();
 }
 
 
@@ -59,7 +55,15 @@ function getItemData(){
     return obj;*/
 }
 
-
+function totalSum(){
+  //Add total cubic feet of all objects
+  var sum = 0;
+  var tableSum = document.getElementById('sum');
+  tableItems.forEach(function(items){
+    sum += items.cuft;
+  });
+  tableSum.innerHTML = sum;
+}
 
 
 //Loops through the delete buttons and assigns event listeners

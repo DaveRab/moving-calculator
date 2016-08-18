@@ -43,16 +43,17 @@ table {
   margin: 0 auto;
   max-width: 45%;
 }
+
+tfoot {
+  font-weight: 700;
+  border-top: 4px solid #12303e;
+}
 table th {
   background: #55BBEE;
 }
 
 table tbody tr:nth-child(even) {
-  background: #AAA;
-}
-
-table tbody tr:last-child {
-  background: #EEE;
+  background: #EBEBEB;
 }
 
 #main-table {
@@ -66,14 +67,23 @@ td, th {
 }
 
 .remove {
-  cursor: pointer;
-  font-weight: 700;
   margin: 0 auto;
   display: block;
 }
 
 .remove:hover {
-  color: #E66;
+  color: #C60000;
+}
+
+button.remove {
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background: #BEBEBE;
+  border-radius: 50%;
 }
 
 .total {
