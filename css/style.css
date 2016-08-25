@@ -46,9 +46,9 @@ table {
 }
 
 tfoot {
-  font-weight: 700;
   border-top: 4px solid #12303e;
 }
+
 table th {
   background: #55BBEE;
 }
@@ -73,7 +73,6 @@ td, th {
 
 button.remove {
   cursor: pointer;
-  font-weight: 700;
   border: none;
   width: 30px;
   height: 30px;

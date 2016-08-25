@@ -20,12 +20,13 @@ function updateTable(){
     + tableItems[i].height + "\"</td> <td>"
     + tableItems[i].depth + "\"</td> <td>"
     + tableItems[i].qty + "</td> <td>"
-    + tableItems[i].cuft + "</td> <td> <button id=\"" + [i] + "\" class=\"remove\">X</button></td></tr>  ";
+    + tableItems[i].cuft + "</td> <td> <input id=\"" + [i] + "\" type = \"checkbox\" class=\"remove\"></td></tr>  ";
     }
   }
 
+  //<button id=\"" + [i] + "\" class=\"remove\">Remove Item</button>
   //create delete buttons for each row with function createButtons()
-  createButtons();
+  //createButtons();  **updating to checkboxes**
   totalSum();
 }
 
@@ -65,7 +66,7 @@ function totalSum(){
   tableSum.innerHTML = sum;
 }
 
-
+/*
 //Loops through the delete buttons and assigns event listeners
 function createButtons(){
   var buttons = document.getElementsByClassName('remove');
@@ -74,6 +75,12 @@ function createButtons(){
    };
 
 }
+*/
+
+//TODO use getElementsByTagName("input") from table to get all the checkboxes
+//use the TagName array to apply function to enable update button
+//allow update button to delete items with checked boxes
+
 
 //uses id generated in updateTable to delete the row associated with
 //delete button then redraw the new table.
