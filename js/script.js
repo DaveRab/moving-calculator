@@ -26,7 +26,7 @@ function updateTable(){
 
   //<button id=\"" + [i] + "\" class=\"remove\">Remove Item</button>
   //create delete buttons for each row with function createButtons()
-  //createButtons();  **updating to checkboxes**
+  createButtons();
   totalSum();
 }
 
@@ -66,21 +66,45 @@ function totalSum(){
   tableSum.innerHTML = sum;
 }
 
-/*
+
 //Loops through the delete buttons and assigns event listeners
+//forEach() could be added to this loop if Array.prototype were used
+//left it as for loop for the practice
 function createButtons(){
   var buttons = document.getElementsByClassName('remove');
    for(var i=0; i < buttons.length; i++) {
-       buttons[i].addEventListener('click', remove);
+       buttons[i].addEventListener('click', enableUpdate);
    };
 
 }
-*/
+
+
 
 //TODO use getElementsByTagName("input") from table to get all the checkboxes
 //use the TagName array to apply function to enable update button
 //allow update button to delete items with checked boxes
 
+
+//enableUpdate creates an HTMLCollection of the remove checkboxes and
+//checks to see if the items are checked.  if they are the update button is enabled
+//Array.prototype needs to be used on HTMLCollection items
+function enableUpdate() {
+  var checks = document.getElementsByClassName('remove');
+  var updateButton = document.getElementById('update');
+  /* TODO figure out how to disable update button once all checkboxes are disabled
+  function notChecked(element, index, array){
+    return element.checked;
+  };
+  //Array.prototype.every use here?  Might be the way to go.
+  var allChecks = Array.prototype.every.call(checks, (notChecked));
+  */
+  Array.prototype.forEach.call(checks, (function(checks){
+    if(checks.checked){
+      updateButton.disabled = false;
+    }
+  }));
+
+}
 
 //uses id generated in updateTable to delete the row associated with
 //delete button then redraw the new table.
