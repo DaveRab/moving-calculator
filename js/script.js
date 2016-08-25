@@ -71,11 +71,12 @@ function totalSum(){
 //forEach() could be added to this loop if Array.prototype were used
 //left it as for loop for the practice
 function createButtons(){
-  var buttons = document.getElementsByClassName('remove');
-   for(var i=0; i < buttons.length; i++) {
-       buttons[i].addEventListener('click', enableUpdate);
+  var checks = document.getElementsByClassName('remove');
+  var updateButton = document.getElementById('update');
+   for(var i=0; i < checks.length; i++) {
+       checks[i].addEventListener('click', enableUpdate);
    };
-
+   updateButton.addEventListener('click', remove);
 }
 
 
