@@ -92,18 +92,23 @@ function createButtons(){
 function enableUpdate() {
   var checks = document.getElementsByClassName('remove');
   var updateButton = document.getElementById('update');
-  /* TODO figure out how to disable update button once all checkboxes are disabled
-  function notChecked(element, index, array){
-    return element.checked;
-  };
-  //Array.prototype.every use here?  Might be the way to go.
-  var allChecks = Array.prototype.every.call(checks, (notChecked));
-  */
+
+//notChecked() and checkFlase monitors if all check boxes are not checked
+  function notChecked(checkBox){
+    return checkBox.checked == false;
+  }
+  var checkFalse = Array.prototype.every.call(checks, (notChecked));
+
+//forEach cylces through if any of the boxes are checked updateButton is enabled
+//if none of the checkboxes are clicked then updateButton is disabled
   Array.prototype.forEach.call(checks, (function(checks){
     if(checks.checked){
       updateButton.disabled = false;
+    } else if(checkFalse) {
+      updateButton.disabled = true;
     }
   }));
+
 
 }
 
