@@ -115,7 +115,19 @@ function enableUpdate() {
 //uses id generated in updateTable to delete the row associated with
 //delete button then redraw the new table.
 function remove() {
+    var checks = document.getElementsByClassName('remove');
+     console.log(checks[0].checked);
+    for(var i=0; i <= checks.length; i++){
+      if(checks[i].checked){
+        tableItems.splice(i, 1);
+      }
+    }
+
+    /*Array.prototype.forEach.call(checks, (function(checks){
+      if(checks.checked){
+        updateButton.disabled = false;
+      }
     var id = this.getAttribute('id');
-    tableItems.splice(id, 1);
+    tableItems.splice(id, 1);*/
     updateTable();
 }
