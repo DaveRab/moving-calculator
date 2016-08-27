@@ -116,8 +116,9 @@ function enableUpdate() {
 //delete button then redraw the new table.
 function remove() {
     var checks = document.getElementsByClassName('remove');
-     console.log(checks[0].checked);
+     console.log(checks);
     for(var i=0; i <= checks.length; i++){
+      console.log(checks[i]);
       if(checks[i].checked){
         tableItems.splice(i, 1);
       }
