@@ -118,10 +118,12 @@ function remove() {
     var checks = document.getElementsByClassName('remove');
      console.log(checks);
     for(var i=0; i <= checks.length; i++){
-      console.log(checks[i]);
+      if(checks[i]){ //check if HTMLCollection loaded
       if(checks[i].checked){
+        //TODO reconfigure, items not deleting properly, might need to build array then splice?
+        console.log(tableItems[i]);
         tableItems.splice(i, 1);
-      }
+      }};
     }
 
     /*Array.prototype.forEach.call(checks, (function(checks){
